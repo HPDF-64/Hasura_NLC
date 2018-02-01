@@ -45,12 +45,12 @@ android_library(
 
 android_build_config(
     name = "build_config",
-    package = "com.hasura_nlc",
+    package = "com.nlc",
 )
 
 android_resource(
     name = "res",
-    package = "com.hasura_nlc",
+    package = "com.nlc",
     res = "src/main/res",
 )
 
