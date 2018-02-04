@@ -1,0 +1,121 @@
+[2018-01-27 17:56:19 +0000] [1] [DEBUG] Current configuration:
+  config: ./conf/gunicorn_config.py
+  bind: ['0.0.0.0:8080']
+  backlog: 2048
+  workers: 9
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  chdir: /app
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: -
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: src:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f0403781d08>
+  on_reload: <function OnReload.on_reload at 0x7f0403781ea0>
+  when_ready: <function WhenReady.when_ready at 0x7f040378b0d0>
+  pre_fork: <function Prefork.pre_fork at 0x7f040378b268>
+  post_fork: <function Postfork.post_fork at 0x7f040378b400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f040378b598>
+  worker_int: <function WorkerInt.worker_int at 0x7f040378b730>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f040378b8c8>
+  pre_exec: <function PreExec.pre_exec at 0x7f040378ba60>
+  pre_request: <function PreRequest.pre_request at 0x7f040378bbf8>
+  post_request: <function PostRequest.post_request at 0x7f040378bd08>
+  child_exit: <function ChildExit.child_exit at 0x7f040378bea0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f04034f30d0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f04034f3268>
+  on_exit: <function OnExit.on_exit at 0x7f04034f3400>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2018-01-27 17:56:19 +0000] [1] [INFO] Starting gunicorn 19.7.1
+[2018-01-27 17:56:19 +0000] [1] [DEBUG] Arbiter booted
+[2018-01-27 17:56:19 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+[2018-01-27 17:56:19 +0000] [1] [INFO] Using worker: sync
+[2018-01-27 17:56:19 +0000] [10] [INFO] Booting worker with pid: 10
+[2018-01-27 17:56:19 +0000] [11] [INFO] Booting worker with pid: 11
+[2018-01-27 17:56:19 +0000] [12] [INFO] Booting worker with pid: 12
+[2018-01-27 17:56:19 +0000] [13] [INFO] Booting worker with pid: 13
+[2018-01-27 17:56:22 +0000] [15] [INFO] Booting worker with pid: 15
+[2018-01-27 17:56:24 +0000] [16] [INFO] Booting worker with pid: 16
+[2018-01-27 17:56:24 +0000] [14] [INFO] Booting worker with pid: 14
+[2018-01-27 17:56:27 +0000] [17] [INFO] Booting worker with pid: 17
+[2018-01-27 17:56:28 +0000] [1] [DEBUG] 9 workers
+[2018-01-27 17:56:28 +0000] [18] [INFO] Booting worker with pid: 18
+[2018-01-27 17:56:50 +0000] [1] [CRITICAL] WORKER TIMEOUT (pid:10)
+[2018-01-27 17:56:50 +0000] [1] [CRITICAL] WORKER TIMEOUT (pid:11)
+[2018-01-27 17:56:50 +0000] [1] [CRITICAL] WORKER TIMEOUT (pid:12)
+[2018-01-27 17:56:50 +0000] [1] [CRITICAL] WORKER TIMEOUT (pid:13)
+[2018-01-27 17:56:51 +0000] [1] [CRITICAL] WORKER TIMEOUT (pid:14)
+[2018-01-27 17:56:53 +0000] [28] [INFO] Booting worker with pid: 28
+[2018-01-27 17:56:53 +0000] [1] [DEBUG] 7 workers
+[2018-01-27 17:56:53 +0000] [1] [CRITICAL] WORKER TIMEOUT (pid:15)
+[2018-01-27 17:56:53 +0000] [1] [CRITICAL] WORKER TIMEOUT (pid:16)
+[2018-01-27 17:56:54 +0000] [16] [INFO] Worker exiting (pid: 16)
+[2018-01-27 17:56:54 +0000] [29] [INFO] Booting worker with pid: 29
+[2018-01-27 17:56:54 +0000] [31] [INFO] Booting worker with pid: 31
+[2018-01-27 17:56:56 +0000] [1] [CRITICAL] WORKER TIMEOUT (pid:17)
+[2018-01-27 17:56:56 +0000] [17] [INFO] Worker exiting (pid: 17)
+[2018-01-27 17:56:59 +0000] [1] [CRITICAL] WORKER TIMEOUT (pid:18)
+[2018-01-27 17:56:59 +0000] [33] [INFO] Booting worker with pid: 33
+[2018-01-27 17:56:59 +0000] [18] [INFO] Worker exiting (pid: 18)
+[2018-01-27 17:56:59 +0000] [35] [INFO] Booting worker with pid: 35
+[2018-01-27 17:57:00 +0000] [34] [INFO] Booting worker with pid: 34
+[2018-01-27 17:57:02 +0000] [36] [INFO] Booting worker with pid: 36
+[2018-01-27 17:57:03 +0000] [1] [DEBUG] 8 workers
+[2018-01-27 17:57:04 +0000] [1] [DEBUG] 9 workers
+[2018-01-27 17:57:04 +0000] [37] [INFO] Booting worker with pid: 37
+[2018-01-27 17:57:05 +0000] [38] [INFO] Booting worker with pid: 38
+[2018-01-27 17:57:22 +0000] [1] [CRITICAL] WORKER TIMEOUT (pid:28)
+[2018-01-27 17:57:23 +0000] [1] [CRITICAL] WORKER TIMEOUT (pid:29)
+[2018-01-27 17:57:23 +0000] [28] [INFO] Worker exiting (pid: 28)
+[2018-01-27 17:57:23 +0000] [29] [INFO] Worker exiting (pid: 29)
+[2018-01-27 17:57:25 +0000] [1] [CRITICAL] WORKER TIMEOUT (pid:31)

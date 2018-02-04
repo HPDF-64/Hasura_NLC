@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Here Lies a Fancy Textbox</title>
+</head>
+<body>
+	<form method = "POST">
+		{{form.csrf_token}}
+		{{form.box.label}} {{form.box(id = "textboxy")}}
+		{{form.submit()}}
+	</form>
+</body>
+</html>
