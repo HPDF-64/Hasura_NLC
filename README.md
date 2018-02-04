@@ -73,37 +73,30 @@ All of the frontend code is in one file that you can read at: `/React_Native/App
 ### For Modifying & Running the React Native App (Flask)
 * Go Inside `/React_Native` and run 
 
-``` npm install
+```
+    npm install
 ```
 * For Android in terminal type in 
 ```
-    
     react-native run-android 
-
 ```
 * For iOS in terminal type in 
 ```
-    
     react-native run-ios 
-
 ```
 
 ### For Modifying the React Native App (Express)
 * Go Inside `/React_Native` and rename App-Express.js as App.js and run 
-
-``` npm install
+```
+    npm install
 ```
 * For Android in terminal type in 
 ```
-    
     react-native run-android 
-
 ```
 * For iOS in terminal type in 
 ```
-    
     react-native run-ios 
-
 ```
 
 ### For Deployment
