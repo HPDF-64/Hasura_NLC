@@ -85,7 +85,7 @@ All of the frontend code is in one file that you can read at: `/React_Native/App
     react-native run-ios 
 ```
 
-### For Modifying the React Native App (Express)
+### For Modifying & Running the React Native App (Express)
 * Go Inside `/React_Native` and rename App-Express.js as App.js and run 
 ```
     npm install
