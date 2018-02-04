@@ -1,4 +1,4 @@
-# Watson-Natural Language Classifier
+# Watson: Natural Language Classifier
 
 This is a simple application that enables text classification using IBM Watson's Natural Language Understanding.
 
@@ -29,7 +29,7 @@ All of the frontend code is in one file that you can read at: `/React_Native/App
    }    
    ```
    
-* The Payload must contain a key value pair "text":"Text to be analyzed here"
+* The Payload must contain a key value pair `"text":"Text to be analyzed here"`
 * The backend returns the computed result in the form of JSON. Example JSON:
     ```JSON
     {
