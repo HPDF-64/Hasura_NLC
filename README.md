@@ -62,10 +62,12 @@ All of the frontend code is in one file that you can read at: `/React_Native/App
 ### Frontend Application 
 * Simply download and install the application found at `/React_Native/app-release.apk `
 * Input the text to be classified into the given textbox. 
-![Text](https://raw.githubusercontent.com/HPDF-64/Hasura_NLC/master/Readme_Files/before.png | width=100)
+<!---![Text](https://raw.githubusercontent.com/HPDF-64/Hasura_NLC/master/Readme_Files/before.png?v=4&s=200) --->
+<img src="https://raw.githubusercontent.com/HPDF-64/Hasura_NLC/master/Readme_Files/before.png" width="50%" height="50%">
 
 * Tap Analyze to receive your results.
-![Text](https://raw.githubusercontent.com/HPDF-64/Hasura_NLC/master/Readme_Files/after.png | width=100)
+<!--- ![Text](https://raw.githubusercontent.com/HPDF-64/Hasura_NLC/master/Readme_Files/after.png?v=4&s=200) --->
+<img src="https://raw.githubusercontent.com/HPDF-64/Hasura_NLC/master/Readme_Files/after.png" width="50%" height="50%">
 
 ### For Deployment
 * In `/Python-Flask/microservices/watson/src/server.py` replace the username and password with your IBM BlueMix credentials.
