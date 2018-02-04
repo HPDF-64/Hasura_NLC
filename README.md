@@ -60,7 +60,8 @@ All of the frontend code is in one file that you can read at: `/React_Native/App
     ```
 
 ### Frontend Application 
-* Simply download and install the application found at `/React_Native/app-release.apk `
+* Simply download and install the application found at `/React_Native/app-release-Flask.apk ` for the Backend with Python Flask and
+* Install the application found at `/React_Native/app-release-Express.apk ` for the Backend with Python Flask
 * Input the text to be classified into the given textbox. 
 <!---![Text](https://raw.githubusercontent.com/HPDF-64/Hasura_NLC/master/Readme_Files/before.png?v=4&s=200) --->
 <img src="https://raw.githubusercontent.com/HPDF-64/Hasura_NLC/master/Readme_Files/before.png" width="50%" height="50%">
@@ -68,6 +69,42 @@ All of the frontend code is in one file that you can read at: `/React_Native/App
 * Tap Analyze to receive your results.
 <!--- ![Text](https://raw.githubusercontent.com/HPDF-64/Hasura_NLC/master/Readme_Files/after.png?v=4&s=200) --->
 <img src="https://raw.githubusercontent.com/HPDF-64/Hasura_NLC/master/Readme_Files/after.png" width="50%" height="50%">
+
+### For Modifying & Running the React Native App (Flask)
+* Go Inside `/React_Native` and run 
+
+``` npm install
+```
+* For Android in terminal type in 
+```
+    
+    react-native run-android 
+
+```
+* For iOS in terminal type in 
+```
+    
+    react-native run-ios 
+
+```
+
+### For Modifying the React Native App (Express)
+* Go Inside `/React_Native` and rename App-Express.js as App.js and run 
+
+``` npm install
+```
+* For Android in terminal type in 
+```
+    
+    react-native run-android 
+
+```
+* For iOS in terminal type in 
+```
+    
+    react-native run-ios 
+
+```
 
 ### For Deployment
 * In `/Python-Flask/microservices/watson/src/server.py` replace the username and password with your IBM BlueMix credentials.
@@ -77,5 +114,6 @@ All of the frontend code is in one file that you can read at: `/React_Native/App
     $ git commit -m "<Commit Message>"
     $ git push hasura master
     ```
+
 ### Support
 In case of any bugs, issues or feature requests, feel free to raise an issue. We will try to work on it as soon as possible.
