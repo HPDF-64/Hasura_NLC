@@ -14,38 +14,74 @@ import {
   TextInput,
   Button,
   ScrollView,
-  Alert,PermissionsAndroid,
+  Alert,
+  ActivityIndicator
 } from 'react-native';
 import { TextField } from 'react-native-material-textfield';
 
 export default class App extends Component<{}> {
 
-  async _Fetchdata (){
-    return fetch('http://139.59.67.180/hpdf.json')
-      .then((response) => response.json())
-      .then((responseJson) => {
-        //results= responseJson.categories;
-        // console.log(results);
-        // var data = results.map(function(item) {
-        //   console.log(item.label);
-        //   console.log(item.score);
-        // });
-        p = JSON.parse(JSON.stringify(responseJson.categories));
-        return p;
-    //  console.log(responseJson.categories.label)
-      })
 
-      .catch((error) => {
-        console.error(error);
+  ConvertTextToUpperCase=()=>{
+
+      var A = this.state.TextHolder ;
+
+      var B = A.toUpperCase() ;
+
+      this.setState({ TextHolder : B })
+
+    }
+
+  async _Fetchdata (){
+          let formdata = new FormData();
+          formdata.append("text", this.state.text)
+          try {
+           let response = await fetch(
+            "https://watson.joist49.hasura-app.io",
+            {
+              method: "POST",
+              headers: {
+               "Accept": "application/json",
+               "Content-Type": "multipart/form-data"
+              },
+             body: formdata
+           }
+          )
+          .then((response) => response.json())
+          .then((responseJson) => {
+            p = JSON.parse(JSON.stringify(responseJson.categories));
+            return p;
       });
+           if (response.status >= 200 && response.status < 300) {
+              alert("authenticated successfully!!!");
+           }
+         } catch (errors) {
+
+           alert(errors);
+          }
+
+
+
+
+
 
   }
   async _Analyse(){
+    
+    // if (!this.state.p) {
+    //   return (
+    //     <ActivityIndicator
+    //       animating={true}
+    //       style={styles.indicator}
+    //       size="large"
+    //     />
+    //   );
+    // }
     this._Fetchdata();
-    this.setState({showTheThing:true});
       console.log("Clicked");
       for (i=0;i<3;i++){
         console.log(p[i].label);
+
       }
       var Row1Array = p[0].label.split('/');
       var Row2Array = p[1].label.split('/');
@@ -66,6 +102,9 @@ export default class App extends Component<{}> {
       this.setState({mh1:Row1Array[3]});
       this.setState({mh2:Row2Array[3]});
       this.setState({mh3:Row3Array[3]});
+
+      this.setState({showTheThing:true});
+
    //  if(this.state.showTheThing){
    //   this.setState({showTheThing:false});
    // }else{
@@ -78,7 +117,7 @@ export default class App extends Component<{}> {
    super(props);
    this._Analyse=this._Analyse.bind(this);
    this.state = {
-      text: "TextInput \n\n\n\nA foundational component for inputting text into the app via a keyboard. Props provide configurability for several features, such as auto-correction, auto-capitalization, placeholder text, and different keyboard types, such as a numeric keypad. The simplest use case is to plop down a TextInput and subscribe to the onChangeText events to read the user input. There are also other events, such as onSubmitEditing and onFocus that can be subscribed to. A simple example:",
+      text: "TextInput A foundational component for inputting text into the app via a keyboard. Props provide configurability for several features, such as auto-correction, auto-capitalization, placeholder text, and different keyboard types, such as a numeric keypad. The simplest use case is to plop down a TextInput and subscribe to the onChangeText events to read the user input. There are also other events, such as onSubmitEditing and onFocus that can be subscribed to. A simple example:",
       v1:0,
       v2:0,
       v3:0,
@@ -90,8 +129,7 @@ export default class App extends Component<{}> {
       sh1:"Sub Heading1",
       mh1:"Mini Heading1",
       mh2:"Mini Heading2",
-      mh3:"Mini Heading3",
-      headingFull:["","",""],
+      mh3:"Mini Heading3"
 
    }
 }
@@ -105,7 +143,7 @@ export default class App extends Component<{}> {
               ref={this.aboutRef}
               value={data.text}
               onFocus={this.onFocus}
-              onChangeText={this.onChangeText}
+              onChangeText={ (text) => this.setState({ text }) }
               onSubmitEditing={this.onSubmitAbout}
               returnKeyType='next'
               multiline={true}
