@@ -62,10 +62,10 @@ All of the frontend code is in one file that you can read at: `/React_Native/App
 ### Frontend Application 
 * Simply download and install the application found at `/React_Native/app-release.apk `
 * Input the text to be classified into the given textbox. 
-![Text](https://raw.githubusercontent.com/HPDF-64/Hasura_NLC/master/Readme_Files/before.png)
+![Text](https://raw.githubusercontent.com/HPDF-64/Hasura_NLC/master/Readme_Files/before.png | width=100)
 
 * Tap Analyze to receive your results.
-![Text](https://raw.githubusercontent.com/HPDF-64/Hasura_NLC/master/Readme_Files/after.png)
+![Text](https://raw.githubusercontent.com/HPDF-64/Hasura_NLC/master/Readme_Files/after.png | width=100)
 
 ### For Deployment
 * In `/Python-Flask/microservices/watson/src/server.py` replace the username and password with your IBM BlueMix credentials.
@@ -75,3 +75,5 @@ All of the frontend code is in one file that you can read at: `/React_Native/App
     $ git commit -m "<Commit Message>"
     $ git push hasura master
     ```
+### Support
+In case of any bugs, issues or feature requests, feel free to raise an issue. We will try to work on it as soon as possible.
