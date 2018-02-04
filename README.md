@@ -11,7 +11,7 @@ This is a simple application that enables text classification using IBM Watson's
 The application builds on top of the [Natural Language Understanding](https://www.ibm.com/watson/developercloud/natural-language-understanding/api/v1/?python#post-analyze) API developed by IBM.
 
 ### Codebase Structure
-All of the backend code is in one file that you can read at: `/Python-Flask/microservices/watson/src/server.py` 
+All of the backend code is in one file that you can read at: `/hello-nodejs-express/microservices/watson/src/server.py` 
 
 All of the frontend code is in one file that you can read at: `/React_Native/App.js `
 
@@ -70,7 +70,7 @@ All of the frontend code is in one file that you can read at: `/React_Native/App
 <img src="https://raw.githubusercontent.com/HPDF-64/Hasura_NLC/master/Readme_Files/after.png" width="50%" height="50%">
 
 ### For Deployment
-* In `/Python-Flask/microservices/watson/src/server.py` replace the username and password with your IBM BlueMix credentials.
+* In `/hello-nodejs-express/microservices/watson/src/server.py` replace the username and password with your IBM BlueMix credentials.
 * Push these changes to your Hasura cluster using Hasura's CLI.
     ```
     $ git add .
