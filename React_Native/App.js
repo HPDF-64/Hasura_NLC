@@ -21,17 +21,6 @@ import { TextField } from 'react-native-material-textfield';
 
 export default class App extends Component<{}> {
 
-
-  ConvertTextToUpperCase=()=>{
-
-      var A = this.state.TextHolder ;
-
-      var B = A.toUpperCase() ;
-
-      this.setState({ TextHolder : B })
-
-    }
-
   async _Fetchdata (){
           let formdata = new FormData();
           formdata.append("text", this.state.text)
@@ -58,16 +47,10 @@ export default class App extends Component<{}> {
          } catch (errors) {
 
            alert(errors);
-          }
-
-
-
-
-
-
+         }
   }
   async _Analyse(){
-    
+
     // if (!this.state.p) {
     //   return (
     //     <ActivityIndicator
