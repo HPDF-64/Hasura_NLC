@@ -60,8 +60,10 @@ All of the frontend code is in one file that you can read at: `/React_Native/App
     ```
 
 ### Frontend Application 
-* Simply download and install the application found at `/React_Native/app-release-Flask.apk ` for the Backend with Python Flask and
+* Simply download and install the application found at `/React_Native/app-release-Flask.apk ` for the Backend with Python Flask or
+
 * Install the application found at `/React_Native/app-release-Express.apk ` for the Backend with Python Flask
+
 * Input the text to be classified into the given textbox. 
 <!---![Text](https://raw.githubusercontent.com/HPDF-64/Hasura_NLC/master/Readme_Files/before.png?v=4&s=200) --->
 <img src="https://raw.githubusercontent.com/HPDF-64/Hasura_NLC/master/Readme_Files/before.png" width="50%" height="50%">
