@@ -69,6 +69,20 @@ All of the frontend code is in one file that you can read at: `/React_Native/App
 <!--- ![Text](https://raw.githubusercontent.com/HPDF-64/Hasura_NLC/master/Readme_Files/after.png?v=4&s=200) --->
 <img src="https://raw.githubusercontent.com/HPDF-64/Hasura_NLC/master/Readme_Files/after.png" width="50%" height="50%">
 
+### For Modifying & Running the React Native App (Express)
+* Go Inside `/React_Native` and rename App-Express.js as App.js and run 
+```
+    npm install
+```
+* For Android in terminal type in 
+```
+    react-native run-android 
+```
+* For iOS in terminal type in 
+```
+    react-native run-ios 
+```
+
 ### For Deployment
 * In `/hello-nodejs-express/microservices/watson/src/server.py` replace the username and password with your IBM BlueMix credentials.
 * Push these changes to your Hasura cluster using Hasura's CLI.
