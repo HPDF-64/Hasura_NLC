@@ -88,8 +88,6 @@ Find the EXTERNAL-URL for the service named `api`(in this case -> https://api.ap
 
 ## Tutorial
 
-Follow along for a step by step guide on developing and deploying this facebook messenger bot on Hasura.
-
 ## Sections
 * [Architecture](#architecture)
 * [Getting started](#getting-started)
