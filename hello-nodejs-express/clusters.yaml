@@ -1,0 +1,7 @@
+- alias: hasura
+  config:
+    configmap: controller-conf
+    namespace: anthill57-hasura
+  data: null
+  kubeContext: anthill57
+  name: anthill57
