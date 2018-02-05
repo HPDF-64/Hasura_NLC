@@ -93,22 +93,7 @@ Follow along for a step by step guide on developing and deploying this facebook 
 ## Sections
 * [Architecture](#architecture)
 * [Getting started](#getting-started)
-  + [Login to Hasura](#step-1---login-to-hasura)
-  + [Getting a basic Hasura project](#step-2---starting-out-with-a-basic-hasura-project)
-  + [Deploying to the Hasura cluster](#step-4---deploying-our-project-on-the-cluster)
-  + [Checking the microservice status](#step-5---checking-the-microservice-status)
-* [Developing the Facebook Messenger bot](#developing-the-facebook-messenger-bot)
-  + [Adding node dependencies](#adding-additional-node-dependencies)
-  + [Setting up a facebook application](#setting-up-a-facebook-application)
-  + [Enabling webhooks](#enabling-webhooks)
-  + [Page access token](#page-access-token)
-  + [Checking microservice logs](#checking-the-logs-from-our-microservice)
-  + [Fetching movie details](#fetching-movie-details)
-  + [BONUS](#bonus-typing-indicator)
-* [Managing secrets and tokens](#managing-secrets-and-token)
-* [Publishing your bot](#publishing-your-bot)
-* [Future Scope](#future-scope)
-
+ 
 ## Architecture
 
 ![Architecture]()
@@ -180,7 +165,7 @@ var natural_language_understanding = new NaturalLanguageUnderstandingV1({
 });
 ```
 
-### Step 2 - Making a POST call to the service
+### Step 2 - Making a POST call to the service to categorise the text.
 
 ```javascript
 app.post('/', function (req, res) {
