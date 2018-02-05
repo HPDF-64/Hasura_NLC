@@ -11,39 +11,46 @@
 
 * Navigate to https://console.bluemix.net/registration/ to register on IBM.
 
+![alt_text](README_images/regsitration.png)
+
 * Log in to IBM Cloud and go to the [Natural Language Understanding service page](https://console.bluemix.net/catalog/services/natural-language-understanding/).
+
+![alt_text](README_images/login.png)
 
 * Click the "Create" button.
 
+![alt_text](README_images/login_NLU.png)
+
+* Now head over to dashboard after you have created the service.
+
+![alt_text](README_images/dashboard_IBM.png)
+
+* Click on the service name in the dashboard which will take you to the NLU Service page.
+
+![alt_text](README_images/NLU_page.png)
+
 * Click the "Service Credentials" tab on the Natural Language Understanding page in your [IBM Cloud dashboard](https://console.bluemix.net/dashboard/) to view your credentials.
 
+![alt_text](README_images/service_credentials.png)
 
-![Page token](https://raw.githubusercontent.com/jaisontj/hasura-fb-bot/master/assets/tutorial_fb_bot_page_token.png "Page token")
-
-* Now, we need to trigger the facebook app to start sending us messages
-  - Switch back to the terminal
-  - Paste the following command:
-
-```sh
-# Replace <PAGE_ACCESS_TOKEN> with the page access token you just generated.
-$ curl -X POST "https://graph.facebook.com/v2.6/me/subscribed_apps?access_token=<PAGE_ACCESS_TOKEN>"
+* click on View Credentials to see your credentials to be used further.
+```json
+{
+  "url": "https://gateway.watsonplatform.net/natural-language-understanding/api",
+  "username": "dh4il910-241a-49a8-lk90-bd7b83a185f1",
+  "password": "avb5hdbswk"
+}
 ```
-
-* In this project, we are using https://www.themoviedb.org/ to get information about the movie, to access their APIs you need an API key. You can find instructions to get one [here](https://developers.themoviedb.org/3/getting-started).
 
 ### Getting the Hasura project
 
 ```sh
-$ hasura quickstart jaison/fb-bot
-$ cd fb-bot
-# Add FACEBOOK_VERIFY_TOKEN to secrets. This is any pass phrase that you decide on, keep a note on what you are choosing as your verify token, we will be using it later while setting things up for your bot on the facebook developer page.
-$ hasura secrets update bot.fb_verify_token.key <YOUR-VERIFY-TOKEN>
-# Add FACEBOOK_PAGE_ACCESS_TOKEN to secrets
-$ hasura secrets update bot.fb_page_token.key <YOUR-FB-PAGE-ACCESS-TOKEN>
-# Add Movie db api token to secrets
-$ hasura secrets update bot.movie_db_token.key <YOUR-MOVIEDB-API-TOKEN>
-# Deploy
-$ git add . && git commit -m "Deployment commit"
+$ # 1) Run the quickstart command
+$ hasura quickstart hasura/hello-nodejs-express
+
+$ # 2) Git add, commit & push to deploy to your cluster
+$ cd hello-nodejs-express
+$ git add . && git commit -m "First commit"
 $ git push hasura master
 ```
 
@@ -59,7 +66,7 @@ You will get an output like so:
 INFO Getting microservices...                     
 INFO Custom microservices:                        
 NAME   STATUS    INTERNAL-URL(tcp,http)   EXTERNAL-URL
-bot    Running   bot.default              https://bot.apology69.hasura-app.io
+bot    Running   bot.default              https://api.apology69.hasura-app.io
 
 INFO Hasura microservices:                        
 NAME            STATUS    INTERNAL-URL(tcp,http)   EXTERNAL-URL
@@ -76,32 +83,8 @@ sshd            Running   sshd.hasura
 vahana          Running   vahana.hasura
 ```
 
-Find the EXTERNAL-URL for the service named `bot`(in this case -> https://bot.apology69.hasura-app.io).
+Find the EXTERNAL-URL for the service named `api`(in this case -> https://api.apology69.hasura-app.io).
 
-### Enabling webhooks
-
-In your fb app page, scroll down until you find a card name `Webhooks`. Click on the `setup webhooks` button.
-
-![Enable webhooks2](https://raw.githubusercontent.com/jaisontj/hasura-fb-bot/master/assets/tutorial_fb_bot_enable_webhooks2.png "Enable webhooks2")
-
-* The `callback URL` is the URL that the facebook servers will hit to verify as well as forward the messages sent to our bot. The nodejs app in this project uses the `/webhook` path as the `callback URL`. Making the `callback URL` https://bot.YOUR-CLUSTER-NAME.hasura-app.io/webhook (in this case -> https://bot.apology69.hasura-app.io/webhook/)
-* The `verify token`is the verify token that you set in your secrets above (in the command $ hasura secrets update bot.fb_verify_token.key <YOUR-VERIFY-TOKEN>)
-* After selecting all the `Subsciption Fields`. Submit and save.
-* You will also see another section under `Webhooks` that says `Select a page to subscribe your webhook to the page events`, ensure that you select the respective facebook page here.
-
-Next, open up your facebook page.
-
-* Hover over the **Send Message** button and click on Test Button.
-
-* Instead, if your button says **+ Add Button**, click on it.
-
-![Add button](https://raw.githubusercontent.com/jaisontj/hasura-fb-bot/master/assets/tutorial_fb_bot_page_add_button.png "Add button")
-
-* Next, click on **Use our messenger bot**. Then, **Get Started** and finally **Add Button**.
-* You will now see that the **+ Add button** has now changed to **Get Started**. Hovering over this will show you a list with an item named **Test this button**. Click on it to start chatting with your bot.
-* Send a message to your bot.
-
-Test out your bot, on receiving a movie name it should respond with details about that movie.
 
 ## Tutorial
 
@@ -128,7 +111,7 @@ Follow along for a step by step guide on developing and deploying this facebook 
 
 ## Architecture
 
-![Architecture](https://raw.githubusercontent.com/jaisontj/hasura-fb-bot/master/assets/tutorial_fb_bot_architecture.png "Architecture")
+![Architecture]()
 
 ## Getting started
 
