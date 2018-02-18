@@ -73,7 +73,7 @@ All of the frontend code is in one file that you can read at: `/React_Native/App
 <img src="https://raw.githubusercontent.com/HPDF-64/Hasura_NLC/master/Readme_Files/after.png" width="50%" height="50%">
 
 ### For Modifying & Running the React Native App (Flask)
-* Go Inside `/React_Native` and run 
+* Go Inside `/React_Native` and rename App-Flask.js as App.js and run 
 
 ```
     npm install

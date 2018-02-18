@@ -22,6 +22,20 @@ import { TextField } from 'react-native-material-textfield';
 export default class App extends Component<{}> {
 
   async _Fetchdata (){
+
+    var details = {
+'input': this.state.text
+};
+
+var formBody = [];
+for (var property in details) {
+var encodedKey = encodeURIComponent(property);
+var encodedValue = encodeURIComponent(details[property]);
+formBody.push(encodedKey + "=" + encodedValue);
+}
+formBody = formBody.join("&");
+
+
           var formBody = [];
           let formdata = new FormData();
           formdata.append("input", this.state.text);
@@ -29,12 +43,12 @@ export default class App extends Component<{}> {
           formBody = formBody.join("&");
           try {
            let response = await fetch(
-            "https://api.anthill57.hasura-app.io/",
+            "https://api.autobahn80.hasura-app.io/",
             {
               method: "POST",
               headers: {
                "Accept": "application/json",
-               "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+               "Content-Type": "application/x-www-form-urlencoded"
               },
              body: formBody
            }
